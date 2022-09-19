@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./blanchard-favicon.svg" type="image/svg+xml">
+  <title>Blanchard</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+      <a href="#" class="header__logo">
+        <img src="./img/blanchard-logo.svg" alt="Логотип Blanchard">
+      </a>
+      <nav class="header__nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="about-us" class="nav__link">О нас</a>
+          </li>
+          <li class="nav__item">
+            <a href="gallery" class="nav__link">Галерея</a>
+          </li>
+          <li class="nav__item">
+            <a href="catalog" class="nav__link">Каталог</a>
+          </li>
+          <li class="nav__item">
+            <a href="#events" class="nav__link">События</a>
+          </li>
+          <li class="nav__item">
+            <a href="#projects" class="nav__link">Проекты</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contacts" class="nav__link">Контакты</a>
+          </li>
+        </ul>
+        <button class="nav__btn btn-reset">Войти
+          <svg width="1920" height="100" viewBox="0 0 1920 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="1920" height="100" fill="black" />
+          </svg>
+        </button>
+      </nav>
+      <div class="header__search search">
+        <ul class="search__list">
+          <li class="search__item">
+            <select name="" id="" class="search__select"></select>
+          </li>
+          <li class="search__item">
+            <select name="" id="" class="search__select"></select>
+          </li>
+          <li class="search__item">
+            <select name="" id="" class="search__select"></select>
+          </li>
+          <li class="search__item">
+            <select name="" id="" class="search__select"></select>
+          </li>
+          <li class="search__item">
+            <select name="" id="" class="search__select"></select>
+          </li>
+          <li class="search__item">
+            <select name="" id="" class="search__select"></select>
+          </li>
+        </ul>
+        <form class="search__form" action="#">
+          <button class="search__btn">
+            <svg class="search__svg" width="23" height="22" viewBox="0 0 23 22" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect width="6.8678" height="1.71695"
+                transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white" />
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.0967 18C7.53016 18 3.99668 14.3229 3.99668 10C3.99668 5.67715 7.53016 2 12.0967 2C16.6632 2 20.1967 5.67715 20.1967 10C20.1967 14.3229 16.6632 18 12.0967 18ZM12.0967 20C6.57383 20 2.09668 15.5228 2.09668 10C2.09668 4.47715 6.57383 0 12.0967 0C17.6195 0 22.0967 4.47715 22.0967 10C22.0967 15.5228 17.6195 20 12.0967 20Z"
+                fill="white" />
+            </svg>
+          </button>
+          <input class="search__input" type="text" aria-label="строка поиска" placeholder="Поиск по сайту">
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero" id="hero">
+      <div class="container">
+        <!-- <div class="hero__cont"> -->
+        <h1 class="hero__title">Прикоснитесь к&nbsp;прекрасному</h1>
+        <p class="hero__text">
+          Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки
+          для новых предложений
+        </p>
+        <button class="btn-reset hero_btn">Подписаться на рассылку</button>
+        <!-- </div> -->
+      </div>
+    </section>
+
+
+    <section class="about-us" id="about-us">
+      <div class="container">
+        <h2 class="about-us__title section-title">О нас</h2>
+        <p class="about-us__text">
+          Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого
+          участника как способного принимать собственные решения касаемо распределения внутренних резервов
+          и&nbsp;ресурсов. Не&nbsp;следует, однако, забывать, что высококачественный прототип будущего проекта влечёт
+          за&nbsp;собой процесс внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что
+          высокое качество позиционных исследований создаёт необходимость включения в&nbsp;производственный план целого
+          ряда внеочередных мероприятий с&nbsp;учётом комплекса распределения внутренних резервов и&nbsp;ресурсов.
+          В&nbsp;рамках спецификации современных стандартов, действия представителей оппозиции набирают популярность
+          среди определённых слоёв населения, а&nbsp;значит, должны быть разоблачены.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="gallery__cont">
+          <div class="gallery__cont-left">
+            <h2 class="section-title gallery__title">Галерея</h2>
+            <label class="gallery__label" for="painting-select">Фильтр:</label>
+            <select class="gallery__select" name="painting" id="painting-select">
+              <option value="Живопись">Живопись</option>
+              <option value="Живопись">Живопись</option>
+              <option value="Живопись">Живопись</option>
+            </select>
+            <div class="gallery__checkbox century">
+              <ul class="century__list">
+                <li class="century__item">
+                  <label for="check1" class="century__label">
+                    <input class="century__checkbox" id="check1">
+                    XIX век
+
+
+                  </label>
+                </li>
+                <li class="century__item">
+                  <label for="check2" class="century__label">
+                    <input class="century__checkbox" id="check2">
+                    XX век
+                  </label>
+                </li>
+                <li class="century__item">
+                  <label for="check3" class="century__label">
+                    <input class="century__checkbox" id="check3">
+                    Современность
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="gallery__cont-right">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <h2 class="section-title">Каталог</h2>
+        <p class="catalog__descr">
+          Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены на&nbsp;независимые элементы.
+        </p>
+        <div class="catalog__cont">
+          <div class="catalog__cont-left person">
+            <h3 class="person__name">Доменико Гирландайо</h3>
+            <time class="person__date">2&nbsp;июня 1448&ndash;11 января 1494</time>
+            <p class="person__descr">
+              Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того времени).
+            </p>
+          </div>
+          <div class="catalog__cont-right"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="events" id="events">
+      <div class="container"></div>
+    </section>
+
+
+    <section class="projects" id="projects">
+      <div class="container"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
