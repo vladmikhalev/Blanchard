@@ -1010,12 +1010,13 @@
           </div>
 
           <div class="contacts__form-wrapper">
-            <form action="send.php" method="post" class="contacts__form flex form" id="contacts__form">
+            <form action="send.php" enctype="multipart/form-data" method="POST" class="contacts__form flex form" id="contacts__form">
+              <!-- <input type="hidden" name="admin_email[]" value="v.a.mikhalev@gmail.com" > -->
               <div class="flex contacts__input-wrapper">
-                <input class="contacts__input form__input " id="name" name="name" type="text" placeholder="Имя*">
+                <input data-validate-field="name" class="contacts__input form__input " id="name" name="name" type="text" placeholder="Имя*">
               </div>
               <div class="flex contacts__input-wrapper">
-                <input class="contacts__input form__input " id="tel" name="tel" type="tel" placeholder="Телефон*">
+                <input data-validate-field="tel" class="contacts__input form__input " id="tel" name="tel" type="tel" placeholder="Телефон*">
               </div>
               <button class="contacts__btn-form btn-reset" id="submit-btn" type="submit">Заказать <span>обратный
                   звонок</span></button>
@@ -1243,9 +1244,12 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+  <!-- <script src="./lib/just-validate.min.js"></script> -->
   <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+
   <!-- <script src="./lib/jquery-ui-1.13.2/jquery-ui.min.js"></script> -->
   <script src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
+  <script src="./lib/inputmask.min.js"></script>i
 
   <script src="./lib/jquery-3.6.1.min.js"></script>
   <script src="./lib/jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>

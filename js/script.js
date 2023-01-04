@@ -235,52 +235,7 @@ tippy('#thirdTooltip', {
 
 
 
-// validation
-const validate = new window.JustValidate('#contacts__form');
-const validation = new JustValidate('#contacts__form');
 
-validation
-  .addField('#name', [
-    {
-      rule: 'minLength',
-      value: 3,
-      errorMessage: 'Минимум 3 буквы',
-    },
-    {
-      rule: 'maxLength',
-      value: 30,
-      errorMessage: 'Максимум 30 букв',
-    },
-    {
-      rule: 'required',
-      errorMessage: 'Пожалуйста введите имя',
-    },
-  ])
-  .addField('#tel', [
-    {
-      rule: 'required',
-      errorMessage: 'Пожалуйста введите номер',
-    },
-    {
-      rule: 'number',
-      errorMessage: 'Недопустимый формат',
-    },
-    // {
-    //   rule: 'minNumber',
-    //   value: 5,
-    //   errorMessage: 'Минимум 5 цифр',
-    // },
-    // {
-    //   rule: 'maxNumber',
-    //   value: 15,
-    //   errorMessage: 'Максимум 15 цифр',
-    // },
-    // {
-    //   rule: 'customRegexp',
-    //   value: /^[\+7]{2}\ \([\d]{2,3}\)\ [\d]{2,3}-[\d]{2,3}-[\d]{2,3}$/,
-    //   errorMessage: 'Введите номер в формате +7 (910) 160-98-98',
-    // },
-  ]);
 
 
 
@@ -387,7 +342,7 @@ function handleTabletChange(media) {
         tabsItem.forEach(function (element) { element.removeAttribute('id') });
         document.querySelector(`[data-target="${path}"]`).setAttribute("id", path);
       } else {
-        tabsItem.forEach(function (element) {element.removeAttribute('id') });
+        tabsItem.forEach(function (element) { element.removeAttribute('id') });
       }
 
 
@@ -406,3 +361,137 @@ handleTabletChange(mediaQuery)
 // the third additional task
 
 var myModal = document.getElementById('myModal')
+
+
+
+
+
+// input mask
+
+let selector = document.querySelector('input[type="tel"]');
+let im = new Inputmask("+7 (999) 999-99-99");
+im.mask(selector);
+
+
+
+
+
+
+
+
+// new window.JustValidate('#contacts__form', {
+//   rules: {
+//     name: {
+//       required: true,
+//       minLength: 3,
+//       maxLength: 30,
+//       },
+    
+//     tel: {
+//       required: true,
+//       function: () => {
+//         const phone = selector.inputmask.unmaskedvalue(); 
+//         return Number(phone) && phone.length === 10;
+//       }
+//     }
+//   },
+//   messages: {
+//     name: {
+//       required: 'Пожалуйста введите имя',
+//       minLength: 'Минимум 3 буквы',
+//       maxLength: 'Максимум 30 букв',
+
+//     },
+//     tel: {
+//       required: 'Пожалуйста введите номер',
+//       function: 'Введите не менее 10 цифр'
+//     }
+//   },
+//   submitHandler: function (thisForm) {
+//     let formData = new FormData(thisForm);
+
+//     let xhr = new XMLHttpRequest();
+
+//     xhr.onreadystatechange = function () {
+//       if (xhr.readyState === 4) {
+//         if (xhr.status === 2000) {
+//           console.log('Отправлено');
+//         }
+//         else {
+//           console.log('что-то пошло не так')
+//         }
+//       }
+//     }
+
+//     xhr.open('POST', 'send.php', true);
+//     xhr.send(formData);
+
+//     thisForm.reset();
+//   }
+// })
+
+
+
+
+const validate  = new window.JustValidate('#contacts__form');
+const validation = new JustValidate('#contacts__form');
+
+validation
+  .addField('#name', [
+    {
+      rule: 'minLength',
+      value: 3,
+      errorMessage: 'Минимум 3 буквы',
+    },
+    {
+      rule: 'maxLength',
+      value: 30,
+      errorMessage: 'Максимум 30 букв',
+    },
+    {
+      rule: 'required',
+      errorMessage: 'Пожалуйста введите имя',
+    },
+  ])
+  .addField('#tel', [
+    {
+      rule: 'required',
+      errorMessage: 'Пожалуйста введите номер',
+    },
+    {
+      rule: 'function',
+      validator: function () {
+        const phone = selector.inputmask.unmaskedvalue(); 
+        return phone.length === 10;
+      },
+      errorMessage: 'Введите не менее 10 цифр',
+    },
+  ]).onSuccess((event) => {
+    console.log('Validation passes and form submitted')
+    console.log(event);
+
+    let formData = new FormData(event.target);
+
+    console.log(...formData);
+     
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log('Отправлено');
+        }
+      }
+    }
+
+    console.log(xhr)
+    console.log(event.target)
+    console.log(event.target.reset())
+
+    xhr.open('POST', 'mail.php', true);
+    xhr.send(formData);
+
+    event.target.reset();
+
+
+  });

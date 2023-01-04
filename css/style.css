@@ -2126,13 +2126,13 @@ a:hover {
   margin-right: 20px;
 }
 
-.just-validate-error-label {
+.js-validate-error-label {
   position: absolute;
   top: -25px;
   left: 25px;
 }
 
-.just-validate-error-field {
+.js-validate-error-field {
   border: 1px solid rgb(184, 17, 17);
 }
 
