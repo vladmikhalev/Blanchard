@@ -1,13 +1,21 @@
 // select in header
 
-// const element = document.querySelector('.search__select');
-// const choices = new Choices(element, {
-//   searchEnabled: false,
-//   allowHTML: true,
-//   position: 'bottom',
-//   shouldSort: false,
+const btnBlock = document.querySelector('.search__btn');
+const dropdownBlock = document.querySelector('.dropdown');
 
-// });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // scrollbar 
 document.querySelectorAll(".dropdown__simplbar").forEach(dropdown => {
@@ -25,12 +33,25 @@ const activeClassdropdowns = "dropdown__active";
 const activeClassbtns = "btn__active";
 
 btns.forEach(item => {
-  item.addEventListener("click", function () {
+  item.addEventListener("click", function (e) {
     let DropThis = this.parentElement.querySelector(".dropdown");
     dropdowns.forEach(el => {
       if (el != DropThis) {
         el.classList.remove(activeClassdropdowns)
       }
+
+      el.addEventListener('click', (event) => {
+        event._isClickWithinBlock = true;
+      })
+
+      document.addEventListener('click', (event) => {
+        
+      
+        if (event._isClickWithinBlock === true || event.target === e.target) return;
+        DropThis.classList.remove(activeClassdropdowns);
+        this.classList.remove(activeClassbtns);
+      })
+
     });
     btns.forEach(el => {
       if (el != this) {
@@ -41,6 +62,15 @@ btns.forEach(item => {
     this.classList.toggle(activeClassbtns);
   })
 })
+
+
+
+
+
+
+
+
+
 
 
 // подключение кастомного селекта
@@ -138,6 +168,7 @@ var swiperEvents = new Swiper(".swiperEvents", {
 
   pagination: {
     el: ".swiper-pagination-events",
+    clickable: true,
   },
 
   navigation: {
@@ -313,13 +344,18 @@ const btnSearch = document.querySelector('.form__btn-search');
 const btnClose = document.querySelector('.form__btn-close');
 
 
-btnSearch.addEventListener('click', () => {
+btnSearch.addEventListener('click', (event) => {
+  event.preventDefault();
   searchFormTop.classList.add('active');
 })
 
 
 btnClose.addEventListener('click', () => {
   searchFormTop.classList.remove('active');
+})
+
+searchFormTop.addEventListener('submit', (e) => {
+  e.preventDefault();
 })
 
 
@@ -386,7 +422,7 @@ im.mask(selector);
 //       minLength: 3,
 //       maxLength: 30,
 //       },
-    
+
 //     tel: {
 //       required: true,
 //       function: () => {
@@ -433,7 +469,7 @@ im.mask(selector);
 
 
 
-const validate  = new window.JustValidate('#contacts__form');
+const validate = new window.JustValidate('#contacts__form');
 const validation = new JustValidate('#contacts__form');
 
 validation
@@ -461,7 +497,7 @@ validation
     {
       rule: 'function',
       validator: function () {
-        const phone = selector.inputmask.unmaskedvalue(); 
+        const phone = selector.inputmask.unmaskedvalue();
         return phone.length === 10;
       },
       errorMessage: 'Введите не менее 10 цифр',
@@ -473,7 +509,7 @@ validation
     let formData = new FormData(event.target);
 
     console.log(...formData);
-     
+
     let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
