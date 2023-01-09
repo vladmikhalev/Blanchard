@@ -1719,6 +1719,7 @@ body {
   text-align: left;
   line-height: 32px;
   color: #333333;
+  transition: all 0.2s ease-in-out;
 }
 
 .tabs-nav__btn:hover {
@@ -2820,4 +2821,9 @@ a:hover {
   position: absolute;
   top: -27px;
   left: 24px;
+}
+
+
+.invisible-title {
+  visibility: hidden;
 }
