@@ -111,7 +111,7 @@ const swiperGallery = new Swiper(".swiperGallery", {
 
   breakpoints: {
     //   // when window width is >= 1799px
-    767: {
+    500: {
       spaceBetween: 38,
       slidesPerView: 2,
       slidesPerGroup: 1,
@@ -121,7 +121,7 @@ const swiperGallery = new Swiper(".swiperGallery", {
       slidesPerView: 2,
       slidesPerGroup: 2,
     },
-    1580: {
+    1311: {
       spaceBetween: 50,
       slidesPerView: 3,
       slidesPerGroup: 3,
@@ -347,6 +347,7 @@ const btnClose = document.querySelector('.form__btn-close');
 btnSearch.addEventListener('click', (event) => {
   event.preventDefault();
   searchFormTop.classList.add('active');
+  
 })
 
 
@@ -394,9 +395,31 @@ handleTabletChange(mediaQuery)
 
 
 
-// the third additional task
+// the third additional task (Модальное окно)
 
-var myModal = document.getElementById('myModal')
+const btnModal = document.querySelectorAll('.btn-modal-js');
+const modal = document.querySelector('.modal');
+const btnCloseModal = document.querySelector('.modal__btn-close');
+const modalContent = document.querySelector('.modal__content');
+
+btnModal.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modal.classList.add('is-open');
+    body.classList.add('lock');
+  })
+});
+
+btnCloseModal.addEventListener('click', () => {
+  modal.classList.remove('is-open');
+  body.classList.remove('lock');
+})
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.classList.remove('is-open');
+    body.classList.remove('lock');
+  }
+})
 
 
 
