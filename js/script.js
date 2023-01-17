@@ -17,15 +17,15 @@ const dropdownBlock = document.querySelector('.dropdown');
 
 
 
-// scrollbar 
-document.querySelectorAll(".dropdown__simplbar").forEach(dropdown => {
-  new SimpleBar(dropdown, {
-    /* чтобы изначально ползунок был виден */
-    autoHide: false,
-    /* с помощью этого значения вы можете управлять высотой ползунка*/
-    scrollbarMaxSize: 28,
-  });
-})
+// // scrollbar 
+// document.querySelectorAll(".dropdown__simplbar").forEach(dropdown => {
+//   new SimpleBar(dropdown, {
+//     /* чтобы изначально ползунок был виден */
+//     autoHide: false,
+//     /* с помощью этого значения вы можете управлять высотой ползунка*/
+//     scrollbarMaxSize: 28,
+//   });
+// })
 
 const btns = document.querySelectorAll(".search__btn");
 const dropdowns = document.querySelectorAll(".dropdown");
