@@ -4,6 +4,13 @@ http://blanchart.webtm.ru/
 
 Blanchard - это одностроничный сайт для художественной галереи 
 
+<img width="400" alt="Screenshot 2023-05-19 at 17 47 31" src="https://github.com/vladmikhalev/Blanchard/assets/107835280/779d967d-afe5-45a2-a84a-3a3bbb53d09d">
+<img width="400" alt="Screenshot 2023-05-19 at 17 48 57" src="https://github.com/vladmikhalev/Blanchard/assets/107835280/f889cb7f-44d0-458b-a7e5-09c28b8d2da7">
+
+
+
+
+
 При выполнении проекта были использованы следующие технологии: 
  - Кастомные выпадающие меню с кастомным скролл баром
  - В Hero блоке плавно сменяющийся фон
