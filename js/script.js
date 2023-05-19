@@ -17,7 +17,7 @@ const dropdownBlock = document.querySelector('.dropdown');
 
 
 
-// // scrollbar 
+// // scrollbar
 // document.querySelectorAll(".dropdown__simplbar").forEach(dropdown => {
 //   new SimpleBar(dropdown, {
 //     /* чтобы изначально ползунок был виден */
@@ -45,8 +45,8 @@ btns.forEach(item => {
       })
 
       document.addEventListener('click', (event) => {
-        
-      
+
+
         if (event._isClickWithinBlock === true || event.target === e.target) return;
         DropThis.classList.remove(activeClassdropdowns);
         this.classList.remove(activeClassbtns);
@@ -292,7 +292,7 @@ function init() {
     // Необходимо указать данный тип макета.
     iconLayout: 'default#image',
     // Своё изображение иконки метки.
-    iconImageHref: '../img/map-marker.svg',
+    iconImageHref: './img/map-marker.svg',
     // Размеры метки.
     iconImageSize: [20, 20],
     // Смещение левого верхнего угла иконки относительно
@@ -347,7 +347,7 @@ const btnClose = document.querySelector('.form__btn-close');
 btnSearch.addEventListener('click', (event) => {
   event.preventDefault();
   searchFormTop.classList.add('active');
-  
+
 })
 
 
@@ -449,7 +449,7 @@ im.mask(selector);
 //     tel: {
 //       required: true,
 //       function: () => {
-//         const phone = selector.inputmask.unmaskedvalue(); 
+//         const phone = selector.inputmask.unmaskedvalue();
 //         return Number(phone) && phone.length === 10;
 //       }
 //     }
