@@ -1,6 +1,6 @@
 # Blanchard
 
-http://blanchart.webtm.ru/
+https://vladmikhalev.github.io/Blanchard/
 
 Blanchard - это одностроничный сайт для художественной галереи 
 
