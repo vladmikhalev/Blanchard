@@ -1,6 +1,6 @@
 # Blanchard
 
-https://vladmikhalev.github.io/Blanchard/
+Протестить приложение: https://vladmikhalev.github.io/Blanchard/
 
 Blanchard - это одностроничный сайт для художественной галереи 
 
